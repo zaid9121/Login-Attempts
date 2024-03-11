@@ -1,0 +1,99 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 11. Mrz 2024 um 10:23
+-- Server-Version: 10.4.28-MariaDB
+-- PHP-Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Datenbank: `tutorials`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `attempt_count`
+--
+
+CREATE TABLE `attempt_count` (
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(30) NOT NULL,
+  `time_count` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Daten für Tabelle `attempt_count`
+--
+
+INSERT INTO `attempt_count` (`id`, `ip_address`, `time_count`) VALUES
+(6, '::1', 1710148600),
+(7, '::1', 1710148616),
+(8, '::1', 1710148627);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `user_login`
+--
+
+CREATE TABLE `user_login` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Daten für Tabelle `user_login`
+--
+
+INSERT INTO `user_login` (`id`, `username`, `password`) VALUES
+(1, 'zaid', '123');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `attempt_count`
+--
+ALTER TABLE `attempt_count`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `user_login`
+--
+ALTER TABLE `user_login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `attempt_count`
+--
+ALTER TABLE `attempt_count`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT für Tabelle `user_login`
+--
+ALTER TABLE `user_login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
