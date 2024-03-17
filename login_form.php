@@ -32,9 +32,8 @@ if (isset($_POST['submit'])) {
             $_SESSION['USER_ID'] = $res['id'];
             // Delete Date after successflly
             mysqli_query($conn, "delete from attempt_count where ip_address='$ip_address'");
-            
+
             header("location: dashboard.php");
-           
         } else {
             $total_count++;
             $time_remain = 3 - $total_count;
@@ -80,22 +79,14 @@ function getUserIbAddr()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="style.css">
-<style>
- 
-</style>
-
 </head>
 
 <body>
     <form action="" method="post" class="content">
-
         <input type="text" name="username" placeholder="Inter Username"><br>
-
         <input type="password" name="password" placeholder=" Inter Password"><br>
-
         <button type="submit" name="submit">Login</button><br><br>
         <div class="error" style="color: red;"><?php echo $msg ?></div>
-
     </form>
 </body>
 
